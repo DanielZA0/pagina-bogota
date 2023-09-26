@@ -20,12 +20,6 @@ const Hero = () => {
             With emphasis in AI and Data Sience
           </p>
           </div>
-
-
-
-      </div>
-      <div>
-        <img  src={photo} alt='photo'  style ={{position: 'absolute', bottom: '20%', left:'40%', width: '15%', height: 'auto'}}/>
         </div>
     </section>
   )

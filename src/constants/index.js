@@ -1,28 +1,16 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  Unet,
+  Simci,
+  Javeriana,
+  accenture,
+  IOT,
+  ia,
+  digital,
+  basedatos,
+  azure,
+  databricks,
+  redhat,
+  excel,
 } from "../assets";
 
 export const navLinks = [
@@ -42,224 +30,133 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Electronic Engineer",
+    icon: digital,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Data Base and SQL",
+    icon: basedatos,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Machine Learning and Deep Learning",
+    icon: ia,
   },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+
 ];
 
-const technologies = [
+const certificates = [
   {
-    name: "HTML 5",
-    icon: html,
+    title: "Azure fundamentals AZ - 900",
+    icon: azure,
+    source_code_link:'https://drive.google.com/file/d/1Dq34goNGyepqBnepsh2sWgLYLo-21C_y/view?usp=sharing',
   },
   {
-    name: "CSS 3",
-    icon: css,
+    title: "Databricks and Apache Spark to Big data",
+    icon: databricks,
+    source_code_link:'https://drive.google.com/file/d/1l5NRi9vhcRGV_x4vw7G7v_PoHdTDFfPZ/view?usp=sharing',
+  
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    title: "Excel Basics for Data Analysis",
+    icon: excel,
+    source_code_link:'https://drive.google.com/file/d/1FYpwx2_hQWly20rwPWxLPJJLbF1FK8Xg/view?usp=sharing',
+  
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    title: "Red Hat System Administration I (RH124)",
+    icon: redhat,
+    source_code_link:'https://drive.google.com/file/d/1eTVflCKh3XH348sjuU6_x4kinBbpGSmA/view?usp=sharing',
+  
   },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+
 ];
+
 
 const experiences = [
+
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "Big Data and Analytics",
+    company_name: "Accenture",
+    icon: accenture,
+    iconBg: "#fff",
+    date: "January 2023 - july 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Perform ETL processes with Azure, data factory and databricks for the preprocessing of a Machien Learning (ML) model.",
+      "Development of ML models in Python 3.9 for the optimization of an energy company's collection system. The models were trained and deployed in AWS.",
+      "Front-end development in Javascript and Appian for a back office application, which streamlined patient administration in a network of health centers.",
+      "Creation of an RPA in Power Automate to automate the weekly and monthly reminder of the team's birthdays.",
+      "Creation of a dashboard in PowerBI to illustrate the statistics of the work team.",
     ],
   },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+  
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Brain Extraction",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A system that employs preprocessing techniques focused on 3D magnetic resonance imaging and Deep Learning using the U-net configuration, all for the purpose of extracting the brain and enhancing the performance of a system that assists in the diagnosis of MCI (Mild Cognitive Impairment)",
     tags: [
       {
-        name: "react",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Git",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Sklearn",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: Unet,
+    source_code_link: "https://github.com/DanielZA0/3D_Unet",
   },
   {
-    name: "Job IT",
+    name: "SIMCI",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "SIMCI is a system for detecting mild cognitive impairment that employs a multimodal approach and a stratification process to address this issue. The system utilizes demographic characteristics and clinical test results to provide medical interpretability and assist specialists in decision-making. The database includes magnetic resonance imaging (MRI) brain scans, clinical examination results, and demographic information. SIMCI achieves an F1-score of 0.9233, a sensitivity of 0.9200, and a specificity of 0.9275.",
     tags: [
       {
-        name: "react",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Git",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Sklearn",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: Simci,
+    source_code_link: "https://github.com/DanielZA0/Simci",
   },
   {
-    name: "Trip Guide",
+    name: "ViniTech",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "IoT system for monitoring a wine cellar, using a Raspberry Pi and Wi-Fi communication with sensors conditioned with Arduino Uno. This system includes a loss prediction model based on wine evaporation.",
     tags: [
       {
-        name: "nextjs",
+        name: "Heroku",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Matlap",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "pyhton",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: IOT,
     source_code_link: "https://github.com/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, experiences, projects, certificates};

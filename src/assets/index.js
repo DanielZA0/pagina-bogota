@@ -1,62 +1,47 @@
+//logos
 import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+//skills
+import basedatos from "./basedatos.png";
+import digital from "./digital.png";
+import ia from "./ia.png";
+//experience
+import accenture from "./company/accenture_logo.png";
+import Javeriana from "./company/javeriana_logo.png";
+//Works
+import Unet from "./Unet.png";
+import Simci from "./Simci.png";
+import IOT from "./iot.jpg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import enlace from "./enlaceV02.png";
+import resume from "./cv.pdf";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+//certificados
+import azure from "./Certificates/azure.png"
+import databricks from "./Certificates/databricks.png"
+import excel from "./Certificates/excel.png"
+import redhat from "./Certificates/redhat.png"
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 
 export {
+  resume,
+  excel,
+  redhat,
+  databricks,
+  azure,
+  enlace,
+  IOT,
+  Unet,
+  Simci,
+  accenture,
+  Javeriana,
   logo,
-  backend,
-  creator,
-  mobile,
-  web,
   github,
   menu,
   close,
-  css,
-  docker,
-  figma,
-  git,
-  html,
-  javascript,
-  mongodb,
-  nodejs,
-  reactjs,
-  redux,
-  tailwind,
-  typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  basedatos,
+  ia,
+  digital,
 };

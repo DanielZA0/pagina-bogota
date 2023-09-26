@@ -57,9 +57,9 @@
 
 
 .green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: "#770017";
+  background: linear-gradient(90.13deg, #770017 1.9%, #ffffff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #770017 1.9%, #fafafa 97.5%);
 }
 
 .orange-text-gradient {
@@ -128,16 +128,6 @@
 }
 
 /* canvas- styles */
-.canvas-loader {
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  animation: mulShdSpin 1.1s infinite ease;
-  transform: translateZ(0);
-}
 
 
 @keyframes mulShdSpin {
