@@ -5,8 +5,8 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import  Interactive  from './mapa/InteractiveMap';
 
+const Historia = ({ FuncInput }) => {
 
-const Historia = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -16,9 +16,8 @@ const Historia = () => {
         </h2>
       </motion.div>
       <div className = 'justify-content-center'>
-      <Interactive/>
+      <Interactive onClickShowOverlay_={FuncInput}/>
       </div>
-
 
       {/* <div className={`${styles.sectionHeadText} mt-20 flex flex-col`}>
 
@@ -27,5 +26,5 @@ const Historia = () => {
   );
 };
 
-
-export default SectionWrapper(Historia, "Historia");
+export default Historia
+//export default SectionWrapper(Historia, "Historia");
