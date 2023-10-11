@@ -1,25 +1,31 @@
 import React from 'react'
 import {styles} from '../Styles'
-import photo from '../assets/profile_wb_2.png'
+import { motion } from "framer-motion";
+import { fadeIn, textVariant, homeAnimation } from "../utils/motion";
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-      <div  className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
-        <div className='flex flex-col justify-center items-center mt-5'>
-        <div className='w-5 h-5 rounded-full bg-[#770017]' />
-          <div className='w-1 sm:h-80 h-40 red-gradient' />
+      <div  className={`absolute inset-0 top-[30%]  max-w-7xl mx-auto ${styles.paddingX}   justify-center`}>
+      <div>
+        
+        <motion.div className = 'text-center'
+        initial = {{opacity:0, y:-50}}   
+        animate={{y:0, opacity:1}}
+        transition = {{duration:1}}
+        >
+        <h1 className={`${styles.heroHeadText}`}>
+          Bogotá <br className='sm:block hidden' />
+          en mil pedasos
+        </h1>
+        
+
+        <p className={`${styles.heroSubText} mt-2 `}>
+            <br className='sm:block hidden' />
+            Posible frase
+          </p>
+          </motion.div>
         </div>
 
-        <div>
-
-        <h1 className={`${styles.heroHeadText} text-white`}>
-          Hey, I'm  <span className = "text-[#770017]">Daniel </span>
-        </h1>
-        <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Electronic Engineer <br className='sm:block hidden' />
-            With emphasis in AI and Data Sience
-          </p>
-          </div>
         </div>
     </section>
   )

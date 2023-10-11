@@ -1,3 +1,5 @@
+import { animate } from "framer-motion";
+
 export const textVariant = (delay) => {
   return {
     hidden: {
@@ -84,5 +86,12 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
         delayChildren: delayChildren || 0,
       },
     },
+  };
+};
+
+
+export const homeAnimation = (staggerChildren, delayChildren) => {
+  return {
+
   };
 };

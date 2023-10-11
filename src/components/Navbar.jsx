@@ -42,11 +42,15 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' style = {{width:'150px', height:'auto'}} />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <p className='text-black text-[18px] font-bold cursor-pointer flex '>
+            LOGO &nbsp;
+            
+          </p> 
+          {/* <img src={logo} alt='logo' style = {{width:'150px', height:'auto'}} /> */}
+          {/* <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Daniel &nbsp;
             <span className='sm:block hidden'> | Electornic Engineer </span>
-          </p>
+          </p> */}
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
@@ -55,7 +59,7 @@ const Navbar = () => {
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-[#A29E9E]"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              } hover:text-black text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -63,7 +67,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden flex flex-1 justify-end '>
           <img
             src={toggle ? close : menu}
             alt='menu'
@@ -81,7 +85,7 @@ const Navbar = () => {
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
+                    active === nav.title ? "text-black" : "text-secondary"
                   }`}
                   onClick={() => {
                     setToggle(!toggle);
