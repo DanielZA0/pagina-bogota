@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { Intro, Contact, Historia, Hero, Navbar, Works, Certificates } from "./components";
+import { Intro, Contact, Historia, Hero, Navbar, Autores, Test } from "./components";
 
 import BigMap from "./components/mapa/big_map";
 
@@ -15,8 +15,7 @@ const App = () => {
 
     setMapId(map_id_)
 
-    if( showOverlay )
-    {
+    if (showOverlay) {
       setShowOverlay(false);
       return;
     }
@@ -27,18 +26,18 @@ const App = () => {
     <BrowserRouter>
       <div className='relative z-0 bg-white'>
         <button onClick={handleClick}>Show overlay</button>
-        <BigMap showOverlay={showOverlay} mapIdTest={mapId}/>
-        {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+
+        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
         </div>
-        */}
+
         <Intro />
+        <BigMap showOverlay={showOverlay} mapIdTest={mapId} />
         <Historia FuncInput={handleClick} />
-        <Works />
-        <Certificates />
+        <Autores />
         <div className='relative z-0'>
-          <Contact />
+         {/* <Test />*/}
         </div>
       </div>
     </BrowserRouter>

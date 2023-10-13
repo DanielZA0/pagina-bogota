@@ -1,11 +1,10 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Intro from "./Intro";
 import Historia from "./Historia";
-import Works from "./Works";
+import Autores from "./Autores";
 import Contact from "./Contact";
-import Certificates from "./Certificates";
+import Test from "./Test"
 
 
 export {
@@ -13,11 +12,7 @@ export {
   Navbar,
   Intro,
   Historia,
-  Works,
-  Certificates,
+  Autores,
   Contact,
-  EarthCanvas, 
-  BallCanvas, 
-  ComputersCanvas, 
-  StarsCanvas
+  Test
 };

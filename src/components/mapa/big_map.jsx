@@ -12,6 +12,7 @@ const BigMap = ({ showOverlay, mapIdTest }) => {
     
     let d_ = "";
 
+
     if( mapIdTest == 0 ) {
         d_ = d_suba;
     }else if (mapIdTest == 1) {
@@ -22,7 +23,6 @@ const BigMap = ({ showOverlay, mapIdTest }) => {
 
     if(showOverlay)
     {
-        
         return (
         <svg
             style={
@@ -37,11 +37,12 @@ const BigMap = ({ showOverlay, mapIdTest }) => {
             fill="none"
             >
             <motion.g
-            initial = {{opacity:0,scale:0, translateX: 0, translateY: 0}}   
-            animate={{opacity:1, scale:2, translateX: '35vw', translateY: '20vh'}}
-            transition = {{duration:5}}
+            initial = {{opacity:0,scale:1, translateX: 0, translateY: 0}}   
+            animate={{opacity:1, scale:8, translateX: '35vw', translateY: '20vh'}}
+            transition = {{duration:2}}
             >
             <g
+            
             id="test_component">
             <path
             style = {{ cursor: 'pointer' }}
