@@ -25,9 +25,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-white'>
-        <button onClick={handleClick}>Show overlay</button>
-
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
         </div>
@@ -35,9 +33,9 @@ const App = () => {
         <Intro />
         <BigMap showOverlay={showOverlay} mapIdTest={mapId} />
         <Historia FuncInput={handleClick} />
-        <Autores />
+        <Autores /> */}
         <div className='relative z-0'>
-         {/* <Test />*/}
+         <Test />
         </div>
       </div>
     </BrowserRouter>

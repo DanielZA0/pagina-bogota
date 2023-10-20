@@ -32,24 +32,22 @@ const BigMap = ({ showOverlay, mapIdTest }) => {
             }
             }
             xmlns="http://www.w3.org/2000/svg"
-            width='100vw'
-            height='100vh'
+            width= "100%"
+            height="100%"
+            //viewBox = "0 0 972 670"
             fill="none"
             >
             <motion.g
             initial = {{opacity:0,scale:1, translateX: 0, translateY: 0}}   
             animate={{opacity:1, scale:8, translateX: '35vw', translateY: '20vh'}}
             transition = {{duration:2}}
+            id="test_component"
             >
-            <g
-            
-            id="test_component">
             <path
             style = {{ cursor: 'pointer' }}
-            fill="#D6B401"
+            fill="#000000"
             d={d_}
             />
-            </g>
             </motion.g>
             </svg>
         );
