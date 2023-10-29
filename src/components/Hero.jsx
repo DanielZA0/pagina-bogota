@@ -1,7 +1,6 @@
 import React from 'react'
 import {styles} from '../Styles'
 import { motion } from "framer-motion";
-import { fadeIn, textVariant, homeAnimation } from "../utils/motion";
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>

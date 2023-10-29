@@ -13,15 +13,15 @@ const App = () => {
   const DEFAULT_SCALE = 1;
 
   const HOVER_SCALE = 1.1;
-  const MAX_SCALE = 10;
+  const MAX_SCALE = 5;
 
   const localidades = 20;
-  
+
   const [overlayOpacity, setOverlayOpacity] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(-1);
-  const [Scale, setScale] = useState( OnesVector() );
-  const [overlayDuration, setOverlayDuration] = useState( 0.5 );
-
+  const [Scale, setScale] = useState(OnesVector());
+  const [overlayDuration, setOverlayDuration] = useState(1);
+  const [localidad, setlocalidad] = useState("");
   const [overlayBackground, setOverlayBackground] = useState("#F1E4B7");
 
   function OnesVector() {
@@ -38,7 +38,7 @@ const App = () => {
     const elementParent = document.getElementById("svg_map");
     elementParent.appendChild(elementToMove);
 
-    setScale( OnesVector() );
+    setScale(OnesVector());
 
   }
 
@@ -49,15 +49,15 @@ const App = () => {
 
   };
 
-  const handleLocalidadClick = (index, color="#F1E4B7") => {
+  const handleLocalidadClick = (index, color = "#F1E4B7", localidad, frase, url, texto) => {
 
     console.log(index);
-
+    setlocalidad(localidad);
     setOverlayBackground(color);
-    setOverlayDuration(0.5);
+    setOverlayDuration(1);
 
-    setCurrentIndex( index );
-    enableOverlay();    
+    setCurrentIndex(index);
+    enableOverlay();
 
     const elementToMove = document.getElementById(`${index}`);
     const elementParent = document.getElementById("svg_map");
@@ -66,53 +66,52 @@ const App = () => {
     let scale_vector = OnesVector();
     scale_vector[index] = MAX_SCALE;
 
-    setScale( scale_vector );
+    setScale(scale_vector);
 
   }
 
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-white'>
-        {/* <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <div className='bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
         </div>
-
         <Intro />
-        <BigMap showOverlay={showOverlay} mapIdTest={mapId} />
-        <Historia FuncInput={handleClick} />
-        <Autores /> */}
-        <div className='relative z-0'>
-         <Test DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE} MAX_SCALE={MAX_SCALE}  Scale={Scale} handleLocalidadClick={handleLocalidadClick} />
-        </div>
-        
-        <motion.div 
-        id="info_localidad"
-        style={
-          { zIndex:-1, background:overlayBackground, position:"absolute", top:0, right:0, bottom:0, left:0 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: overlayOpacity }}
-        transition={{ duration: overlayDuration}}>
-              
-        <div className="container d-flex h-100 p-3 mx-auto flex-column">
-        
-          <main role="main" className="inner cover">
-            <h1 className="cover-heading h-20">Localidad Usme</h1>
-            <p className="lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <div align="center">
-              <iframe width="720" height="480"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY">
-              </iframe>
+
+        <div className='relative z-0 bg-center'>
+          <Test DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE} MAX_SCALE={MAX_SCALE} Scale={Scale} handleLocalidadClick={handleLocalidadClick} />
+          <motion.div
+            id="info_localidad"
+            style={
+              { zIndex: -1, background: 'rgba(255, 0, 0, 1)', position: "absolute", top: 0, right: 0, bottom: 0, left: 0}}
+            initial={{ opacity: 1}}
+            animate={{ opacity: overlayOpacity }}
+            transition={{ duration: overlayDuration }}>
+
+            <div className="relative bg-center">
+
+              <main role="main" className=" flex-column inner cover">
+                <h1 className="cover-heading h-20 flex aling-center">{localidad}</h1>
+                <p className="flex lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                <div align="center">
+                  <iframe 
+                    className = 'mt-10 relative text-align-center'
+                    width="90%" height="480"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                  </iframe>
+                  <p className="flex lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                </div>
+                <p className="lead p-10">
+                  <a href="#" className="flex btn btn-lg btn-danger" onClick={(e) => { e.preventDefault(); disableOverlay(); }}>Volver al mapa</a>
+                </p>
+              </main>
+
             </div>
-            <p className="lead p-10">
-              <a href="#" className="btn btn-lg btn-danger" onClick={()=>disableOverlay()} >Volver al mapa</a>
-            </p>
-          </main>
 
+          </motion.div>
         </div>
-
-        </motion.div>
-
+        {/* <Autores />  */}
       </div>
     </BrowserRouter>
   );
