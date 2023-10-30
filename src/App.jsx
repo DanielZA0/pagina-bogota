@@ -23,7 +23,7 @@ const App = () => {
   const [overlayDuration, setOverlayDuration] = useState(1);
   const [localidad, setlocalidad] = useState("");
   const [overlayBackground, setOverlayBackground] = useState("#F1E4B7");
-
+  
   function OnesVector() {
     return Array.from(Array(localidades), () => 1);
   }
@@ -49,8 +49,10 @@ const App = () => {
 
   };
 
+  
   const handleLocalidadClick = (index, color = "#F1E4B7", localidad, frase, url, texto) => {
 
+    console.log(document.documentElement.scrollTop);
     console.log(index);
     setlocalidad(localidad);
     setOverlayBackground(color);
@@ -72,19 +74,19 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-white'>
+      <div className='relative z-0'>
         <div className='bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
         </div>
         <Intro />
-
-        <div className='relative z-0 bg-center'>
+        <div className='relative z-0 bg-center h-100' style={{ background:'white', height:"100vh"}}>
           <Test DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE} MAX_SCALE={MAX_SCALE} Scale={Scale} handleLocalidadClick={handleLocalidadClick} />
+
           <motion.div
             id="info_localidad"
             style={
-              { zIndex: -1, background: 'rgba(255, 0, 0, 1)', position: "absolute", top: 0, right: 0, bottom: 0, left: 0}}
+              { zIndex: -1, color:'black', background: 'rgba(255, 0, 0, 0)', position: "absolute", top: 0, right: 0, left: 0 }}
             initial={{ opacity: 1}}
             animate={{ opacity: overlayOpacity }}
             transition={{ duration: overlayDuration }}>
@@ -97,7 +99,7 @@ const App = () => {
                 <div align="center">
                   <iframe 
                     className = 'mt-10 relative text-align-center'
-                    width="90%" height="480"
+                    width="90%" height="50%"
                     src="https://www.youtube.com/embed/tgbNymZ7vqY">
                   </iframe>
                   <p className="flex lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
@@ -109,9 +111,14 @@ const App = () => {
 
             </div>
 
-          </motion.div>
+        </motion.div>
+
         </div>
         {/* <Autores />  */}
+
+        <Intro />
+        <Intro />
+        
       </div>
     </BrowserRouter>
   );
