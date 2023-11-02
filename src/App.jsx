@@ -1,32 +1,39 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { Intro, Contact, Historia, Hero, Navbar, Autores, Test } from "./components";
-
-import BigMap from "./components/mapa/big_map";
-
+import { Intro,Hero, Navbar, Autores, Mapa, MapaTitle } from "./components";
+import { styles } from "./styles";
 import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 
 const App = () => {
-
-  const DEFAULT_SCALE = 1;
-
-  const HOVER_SCALE = 1.1;
-  const MAX_SCALE = 5;
-
+  const MAX_SCALE = 10;
   const localidades = 20;
+  const DEFAULT_SCALE = 1;
+  const HOVER_SCALE = 1.1;
 
+  function OnesVector() {
+    return Array.from(Array(localidades), () => 1);
+  }
+
+  function ZeroVector() {
+    return Array.from(Array(localidades), () => 0);
+  }
+
+  const [x, setX] = useState(ZeroVector());
+  const [y, setY] = useState(ZeroVector());
   const [overlayOpacity, setOverlayOpacity] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [Scale, setScale] = useState(OnesVector());
   const [overlayDuration, setOverlayDuration] = useState(1);
   const [localidad, setlocalidad] = useState("");
-  const [overlayBackground, setOverlayBackground] = useState("#F1E4B7");
+  const [Frase1, setFrase1] = useState("");
+  const [urlLocalidad, seturlLocalidad] = useState("");
+  const [texto2, setTexto2] = useState("");
   
-  function OnesVector() {
-    return Array.from(Array(localidades), () => 1);
-  }
+  const [overlayBackground, setOverlayBackground] = useState("#F1E4B7");
+
+
 
   const disableOverlay = () => {
 
@@ -39,6 +46,8 @@ const App = () => {
     elementParent.appendChild(elementToMove);
 
     setScale(OnesVector());
+    setX(ZeroVector());
+    setY(ZeroVector());
 
   }
 
@@ -49,24 +58,39 @@ const App = () => {
 
   };
 
-  
-  const handleLocalidadClick = (index, color = "#F1E4B7", localidad, frase, url, texto) => {
 
-    console.log(document.documentElement.scrollTop);
+  const handleLocalidadClick = (index,personalScale,x,y, localidad, frase, url, texto) => {
+
+    
     console.log(index);
+    console.log(personalScale)
     setlocalidad(localidad);
-    setOverlayBackground(color);
+    setFrase1(frase);
+    seturlLocalidad(url);
+    setTexto2(texto);
     setOverlayDuration(1);
-
     setCurrentIndex(index);
     enableOverlay();
-
+    
     const elementToMove = document.getElementById(`${index}`);
     const elementParent = document.getElementById("svg_map");
     elementParent.appendChild(elementToMove);
 
+    let y_vector = ZeroVector();
+    y_vector[index] = y;
+
+    setY(y_vector);
+
+
+    let x_vector = ZeroVector();
+    x_vector[index] = x;
+
+    setX(x_vector);
+
+
+
     let scale_vector = OnesVector();
-    scale_vector[index] = MAX_SCALE;
+    scale_vector[index] = (MAX_SCALE*personalScale);
 
     setScale(scale_vector);
 
@@ -80,45 +104,52 @@ const App = () => {
           <Hero />
         </div>
         <Intro />
-        <div className='relative z-0 bg-center h-100' style={{ background:'white', height:"100vh"}}>
-          <Test DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE} MAX_SCALE={MAX_SCALE} Scale={Scale} handleLocalidadClick={handleLocalidadClick} />
+        <MapaTitle/>
 
-          <motion.div
+        <div className='relative z-0 h-100' style={{ background: '', height: "100vh" }}>
+        <motion.div
             id="info_localidad"
             style={
-              { zIndex: -1, color:'black', background: 'rgba(255, 0, 0, 0)', position: "absolute", top: 0, right: 0, left: 0 }}
-            initial={{ opacity: 1}}
+              { zIndex: -1, color: 'black', background: 'rgba(255, 0, 0, 0)', position: "absolute", top: 0, right: 0, left: 0 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: overlayOpacity }}
             transition={{ duration: overlayDuration }}>
 
-            <div className="relative bg-center">
+            <div className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0">
 
               <main role="main" className=" flex-column inner cover">
-                <h1 className="cover-heading h-20 flex aling-center">{localidad}</h1>
-                <p className="flex lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+
+                <h1 className={styles.sectionHeadText} style={{textAlign:"center"}}>{localidad} </h1>
+
+                <p className="mt-4 text-secondary text-[17px] max-w-1xl leading-[30px] ">
+                  {Frase1}
+                </p>
                 <div align="center">
-                  <iframe 
-                    className = 'mt-10 relative text-align-center'
-                    width="90%" height="50%"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                  <iframe
+                    className='mt-10 relative text-align-center'
+                    width="80%"
+                    src={urlLocalidad}>
                   </iframe>
-                  <p className="flex lead h-20">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                  <p className="flex lead h-20">{texto2}</p>
                 </div>
-                <p className="lead p-10">
-                  <a href="#" className="flex btn btn-lg btn-danger" onClick={(e) => { e.preventDefault(); disableOverlay(); }}>Volver al mapa</a>
+                <p className="lead ">
+                  <a href="#" className="flex btn btn-lg btn-danger bg-stone-700 py-3 px-8 rounded-xl outline-none w-fit  font-bold  justify  hover:text-white text-[18px] font-medium cursor-pointer" 
+                    onClick={(e) => { e.preventDefault(); disableOverlay(); }}>Volver al mapa</a>
                 </p>
               </main>
 
             </div>
 
-        </motion.div>
+          </motion.div>
 
+      
+          <Mapa DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE}  Scale={Scale} x={x} y={y} handleLocalidadClick={handleLocalidadClick} />
+
+            </div>
+        <div className="mt-10">
+          <Autores />
         </div>
-        {/* <Autores />  */}
 
-        <Intro />
-        <Intro />
-        
       </div>
     </BrowserRouter>
   );

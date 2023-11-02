@@ -14,7 +14,7 @@ const Hero = () => {
         >
         <h1 className={`${styles.heroHeadText}`}>
           Bogotá <br className='sm:block hidden' />
-          en mil pedasos
+          en mil pedazos
         </h1>
         
 

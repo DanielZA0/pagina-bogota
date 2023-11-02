@@ -5,8 +5,8 @@ export const navLinks = [
     title: "Introducción",
   },
   {
-    id: "Historia",
-    title: "Historias",
+    id: "MapaTitle",
+    title: "Mapa",
   },
   {
     id: "Autores",
