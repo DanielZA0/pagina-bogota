@@ -84,7 +84,7 @@ const Navbar = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`font-Bely font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-black" : "text-secondary"
                   }`}
                   onClick={() => {

@@ -18,7 +18,7 @@ const Hero = () => {
         </h1>
         
 
-        <p className={`${styles.heroSubText} mt-2 `}>
+        <p className={`${styles.heroSubText} mt-2 `} style={{fontFamily:"bely"}}>
             <br className='sm:block hidden' />
             Posible frase
           </p>

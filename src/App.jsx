@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Intro,Hero, Navbar, Autores, Mapa, MapaTitle } from "./components";
 import { styles } from "./styles";
 import React, { useState } from "react";
-
+import { logo, menu, close } from "./assets";
 import { motion } from "framer-motion";
 
 const App = () => {
@@ -106,7 +106,7 @@ const App = () => {
         <Intro />
         <MapaTitle/>
 
-        <div className='relative z-0 h-100' style={{ background: '', height: "100vh" }}>
+        <div className='relative z-0 h-100' style={{ background: '', height: "60vh" }}>
         <motion.div
             id="info_localidad"
             style={
@@ -131,11 +131,18 @@ const App = () => {
                     src={urlLocalidad}>
                   </iframe>
                   <p className="flex lead h-20">{texto2}</p>
+                </div >
+
+                <div className="absolute top-0 right-0 mr-5">
+                  <a href="#" className="flex  bg-stone-900 py-3 px-8 rounded-xl outline-none w-20 cursor-pointer" 
+                    onClick={(e) => { e.preventDefault(); disableOverlay(); }}>                
+                    <img
+                    src = {close}
+                    className='w-[10] h-[10] object-contain'
+                  />
+                  </a>
                 </div>
-                <p className="lead ">
-                  <a href="#" className="flex btn btn-lg btn-danger bg-stone-700 py-3 px-8 rounded-xl outline-none w-fit  font-bold  justify  hover:text-white text-[18px] font-medium cursor-pointer" 
-                    onClick={(e) => { e.preventDefault(); disableOverlay(); }}>Volver al mapa</a>
-                </p>
+
               </main>
 
             </div>
@@ -143,7 +150,7 @@ const App = () => {
           </motion.div>
 
       
-          <Mapa DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE}  Scale={Scale} x={x} y={y} handleLocalidadClick={handleLocalidadClick} />
+          <Mapa DEFAULT_SCALE={DEFAULT_SCALE} HOVER_SCALE={HOVER_SCALE}  Scale={Scale} x_mapa={x} y_mapa={y} handleLocalidadClick={handleLocalidadClick} />
 
             </div>
         <div className="mt-10">
