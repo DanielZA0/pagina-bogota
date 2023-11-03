@@ -5,6 +5,7 @@ import Autores from "./Autores";
 import Contact from "./Contact";
 import Mapa from "./Mapa"
 import MapaTitle from "./MapaTitle"
+import HeroPhone from "./HeroPhone"
 
 
 export {
@@ -14,5 +15,6 @@ export {
   Autores,
   Contact,
   Mapa,
-  MapaTitle
+  MapaTitle,
+  HeroPhone,
 };

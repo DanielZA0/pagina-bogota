@@ -16,7 +16,7 @@ const Intro = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)} className=' mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
+        variants={fadeIn("", "", 0.1, 1)} className={styles.ParagraphText}> {/*' mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'*/}
         Electronic engineer with emphasis in digital signals and artificial intelligence from Pontificia Universidad Javeriana. In my career, I have learned low and high level programming languages for advanced data processing and visualization. All this I have worked following the path of discipline, responsibility and leadership, the latter being a determining factor in the success of my projects. I am a persevering person, who looks for concrete solutions and easy execution.  I emphasize my honesty and flexibility to adapt to different technologies required by projects or tasks.
       </motion.p>
 
@@ -30,8 +30,8 @@ const Intro = () => {
       </motion.p>
 
       <motion.div variants={textVariant()}>
-        <div className='text-[#A29E9E] mt-5 bg-stone-700 py-3 px-8 rounded-xl outline-none w-fit  font-bold shadow-md shadow-primary justify  hover:text-white text-[18px] font-medium cursor-pointer'>
-          <a className='btn' href={resume} download="resume.pdf">
+        <div className='text-[#A29E9E] mt-5 bg-stone-700 py-3 px-8 rounded-xl outline-none w-fit  font-bold shadow-md shadow-primary justify  hover:text-white text-[18px] font-medium cursor-pointer' >
+          <a className='btn' href={resume} download="resume.pdf" >
             Descarga nuestra investigación
           </a>
         </div>
