@@ -1,10 +1,24 @@
 import React from 'react'
 import {styles} from '../Styles'
 import { motion } from "framer-motion";
+import bakgroung_image from "../assets/Bogotaazul.png";
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-     <div  className={`absolute inset-0 top-[30%]  max-w-7xl mx-auto ${styles.paddingX}   justify-center`}>
+    <section className={`relative lg:mt-10 sm:mt-[20%] w-full h-screen mx-auto`}>
+     <div  className={`relative inset-0 max-w-7xl mx-auto`}>
+        <motion.div
+          initial = {{opacity:0, y:-50}}   
+          animate={{opacity:1, y:0}}
+          transition = {{duration:2}}>
+            <img
+            src={bakgroung_image}
+            alt='fondo'
+            className='w-full '
+
+
+          />
+        </motion.div>
+          {/*bg-[length:110%_50%] bg-[top:0]*/} 
 {/* 
         <motion.div className = 'text-center'
         initial = {{opacity:0, y:-50}}   

@@ -1,14 +1,18 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
+import { motion } from "framer-motion";
+import { styles } from "../Styles";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const MapaTitle = () => {
     return (
         <>        
 
-            <h2 className="text-black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] ">
-                Mapa
-            </h2>
-
+<motion.div variants={textVariant()}>
+        <h2 className={styles.sectionHeadText} style={{fontFamily:"Crazy"}}>
+          MAPA
+        </h2>
+      </motion.div>
         </>
     )
 }

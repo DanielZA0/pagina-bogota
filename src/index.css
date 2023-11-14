@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Poppins", sans-serif; */
   font-family: "Athelas";
   scroll-behavior: smooth;
   color-scheme: dark;
@@ -20,8 +19,8 @@
 }
 
 @font-face {
-  font-family:"Bely" ;
-  src: url("Bely Display W00 Regular.ttf");
+  font-family:"Crazy" ;
+  src: url("CrazySixties.ttf");
 }
 
 

@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "white",
+        primary: "#142D6E",
         secondary: "#000000",
         tertiary: "white",
         "black-100": "white",
@@ -21,6 +21,8 @@ module.exports = {
   
         'md': '768px',
         // => @media (min-width: 768px) { ... }
+        
+        'ipad':'800px',
   
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
@@ -33,7 +35,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/Bogotaazul.png')",
-        'map-back': "url('bg4.jpg')"
+        'Nav': "url('bgNav.png')"
       },
     },
   },

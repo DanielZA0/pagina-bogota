@@ -18,6 +18,22 @@ export const textVariant = (delay) => {
   };
 };
 
+export const MapaVariant = () => {
+  return {
+    hidden: {
+      y: -50,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 100,
+      },
+    },
+  };
+};
+
 export const fadeIn = (direction, type, delay, duration) => {
   return {
     hidden: {
@@ -86,12 +102,5 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
         delayChildren: delayChildren || 0,
       },
     },
-  };
-};
-
-
-export const homeAnimation = (staggerChildren, delayChildren) => {
-  return {
-
   };
 };
